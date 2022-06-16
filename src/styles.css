@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    background: #EAF3FF 0% 0% no-repeat padding-box;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.roundedCorners--large {
+    border-radius: 20px;
+}
+
+.roundedCorners--small {
+    border-radius: 5px;
+}
+
+.labeled-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    gap: 25px;
+}
+
+.labeled-input {
+    height: 40px;
+    width: 70%;
+    margin: auto;
+    background: #E2E2E2 0% 0% no-repeat padding-box;
+    border-width: 0px;
+}
