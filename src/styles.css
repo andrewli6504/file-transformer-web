@@ -1,9 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* @import '~@angular/material/theming';
+$custom-typography: mat-typography-config(
+    $font-family: 'Poppins'
+);
+
+@include angular-material-typography($custom-typography); */
+
 html, body {
     height: 100%;
     width: 100%;
     margin: 0px;
     background: #EAF3FF 0% 0% no-repeat padding-box;
+}
+
+body {
+    font-family: "Poppins", "Helvetica Neue", sans-serif;
 }
 
 .centered {
@@ -14,25 +26,47 @@ html, body {
 }
 
 .roundedCorners--large {
-    border-radius: 20px;
+    border-radius: 35px;
 }
 
 .roundedCorners--small {
     border-radius: 5px;
 }
 
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .labeled-input-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 50%;
     margin: auto;
-    gap: 25px;
+}
+
+.labeled-input-container--names {
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
 }
 
 .labeled-input {
-    height: 40px;
     width: 70%;
-    margin: auto;
-    background: #E2E2E2 0% 0% no-repeat padding-box;
-    border-width: 0px;
 }
+
+.labeled-input--names {
+    width: 45%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#submit-button {
+    width: 35%;
+    height: 40px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
