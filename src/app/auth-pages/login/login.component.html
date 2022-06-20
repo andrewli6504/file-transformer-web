@@ -1,1 +1,22 @@
-<p>login works!</p>
+<div class="auth-container centered roundedCorners--large">
+    <h1 id="title">Sign In</h1>
+    <form novalidate class="login-form" (ngSubmit)="loginUser()" [formGroup]="loginForm"> 
+        <div class="labeled-input-container">
+            <ngx-avatar class="avatar" name="Test" size="200"></ngx-avatar>
+            <mat-form-field appearance="fill" class="labeled-input">
+                <mat-label>Username/Email</mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="labeled-input">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password">
+            </mat-form-field>
+        </div>
+        <mat-checkbox id="remember-me">Remember me</mat-checkbox>
+        <br>
+        <button mat-raised-button type="submit" id="submit-button" [disabled]="loginForm.invalid" color="primary">Log in</button>
+        <br>
+        <u><a>Forgot password?</a></u>
+        <u><a>Not registered? Sign up</a></u>
+    </form>
+</div>

@@ -10,6 +10,16 @@ div.auth-container {
 .signup-form {
     position: relative;
     top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #title {
