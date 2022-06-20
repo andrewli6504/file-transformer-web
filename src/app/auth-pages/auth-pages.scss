@@ -7,23 +7,28 @@ div.auth-container {
     opacity: 1;
 }
 
-.signup-form {
+.auth-form {
     position: relative;
-    top: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login-form {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.signup-form {
+    top: 200px;
+}
+
+.reset-form {
+    top: 200px;
 }
 
 #title {
     position: relative;
     left: 180px;
     top: 150px;
+}
+
+#reset-instructions {
+    font-size: 14px;
+    margin-left: 20px;
 }

@@ -1,6 +1,6 @@
 <div class="auth-container centered roundedCorners--large">
     <h1 id="title">Sign Up</h1>
-    <form novalidate class="signup-form" (ngSubmit)="signupUser()" [formGroup]="signupForm"> 
+    <form novalidate class="auth-form signup-form" (ngSubmit)="signupUser()" [formGroup]="signupForm"> 
         <div class="labeled-input-container">
             <div class="labeled-input-container--names">
                 <mat-form-field appearance="fill" class="labeled-input--names">
@@ -24,5 +24,7 @@
         <mat-checkbox id="tos-checkbox">I Agree to the <a href="http://google.com">Terms and Conditions</a></mat-checkbox>
         <br>
         <button mat-raised-button type="submit" id="submit-button" [disabled]="signupForm.invalid" color="primary">Register</button>
+        <br>
+        <u><a href="../login">Already registered? Sign in</a></u>
     </form>
 </div>
