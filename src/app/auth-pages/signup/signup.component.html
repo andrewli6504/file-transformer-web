@@ -1,28 +1,28 @@
 <div class="auth-container centered roundedCorners--large">
     <h1 id="title">Sign Up</h1>
-    <form novalidate class="signup-form">
+    <form novalidate class="signup-form" (ngSubmit)="signupUser()" [formGroup]="signupForm"> 
         <div class="labeled-input-container">
             <div class="labeled-input-container--names">
                 <mat-form-field appearance="fill" class="labeled-input--names">
                     <mat-label>First Name</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="firstName">
                 </mat-form-field>
                 <mat-form-field appearance="fill" class="labeled-input--names">
                     <mat-label>Last Name</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="lastName">
                 </mat-form-field>
             </div>
             <mat-form-field appearance="fill" class="labeled-input">
                 <mat-label>Email</mat-label>
-                <input matInput>
+                <input matInput formControlName="email">
             </mat-form-field>
             <mat-form-field appearance="fill" class="labeled-input">
                 <mat-label>Password</mat-label>
-                <input matInput>
+                <input matInput formControlName="password" type="password">
             </mat-form-field>
         </div>
-        <mat-checkbox id="tos-checkbox">I agree to the <a>Terms and Conditions</a></mat-checkbox>
+        <mat-checkbox id="tos-checkbox">I Agree to the <a href="http://google.com">Terms and Conditions</a></mat-checkbox>
         <br>
-        <button mat-raised-button id="submit-button" color="primary">Register</button>
+        <button mat-raised-button type="submit" id="submit-button" [disabled]="signupForm.invalid" color="primary">Register</button>
     </form>
 </div>
