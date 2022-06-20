@@ -31,8 +31,40 @@ export class AuthApiService {
     }
   }
 
+  public clearSession(): void {
+    localStorage.removeItem("token");
+    localStorage.removeItem("email");
+    localStorage.removeItem("firstname");
+    localStorage.removeItem("lastname");
+    localStorage.removeItem("userID");
+  }
+
+  public setSession(authResponse): void {
+    if (authResponse["accessToken"]) {
+      localStorage.setItem("token", authResponse["accessToken"]);
+    }
+    if(authResponse["email"]){
+      localStorage.setItem('email', String(authResponse["email"]));
+    }
+    if(authResponse["firstName"]){
+      localStorage.setItem('firstname', String(authResponse["firstName"]));
+    }
+    if(authResponse["lastName"]){
+      localStorage.setItem('lastname', String(authResponse["lastName"]));
+    }
+    if(authResponse["username"]){
+      localStorage.setItem('username', String(authResponse["username"]));
+    }
+    if(authResponse["id"]){
+      localStorage.setItem('userID', authResponse["id"]);
+    }
+  }
   
-  public signupUser(signupDetails: any) {
+  public createUser(signupDetails: any) {
     return this.restApiBaseService.post("/createUser", { ...signupDetails });
+  }
+
+  public login(loginCredentials: any) {
+    return this.restApiBaseService.post("/login", { ...loginCredentials });
   }
 }

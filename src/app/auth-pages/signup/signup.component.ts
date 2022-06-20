@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthApiService } from 'src/app/services/auth-api/auth-api.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class SignupComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     public authApiService: AuthApiService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -38,14 +40,20 @@ export class SignupComponent implements OnInit {
     var signupObj = {
       firstName: firstName.trim(),
       lastName: lastName.trim(),
-      email: email.trim(),
+      username: email.trim(),
       password: password.trim(),
     };
     
     console.log(signupObj);
 
-    this.authApiService.signupUser(signupObj).subscribe(resp => {
+    this.authApiService.createUser(signupObj).subscribe(resp => {
       console.log(resp);
+      if(resp["error"]) {
+        //TODO: Tell user the error
+      }
+      else {
+        this.router.navigateByUrl("/login");
+      }
     });
   }
 }
