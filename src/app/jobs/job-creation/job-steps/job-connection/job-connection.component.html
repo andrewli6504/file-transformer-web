@@ -1,0 +1,8 @@
+<div class="job-connection-form">
+    <mat-form-field appearance="fill">
+        <mat-label>Select remote connection</mat-label>
+        <mat-select [(value)]="source">
+            <mat-option *ngFor="let con of remoteConnections" [value]="con._id">{{con.connectionName}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

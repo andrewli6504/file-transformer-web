@@ -1,4 +1,4 @@
-.auth-container {
+.job-creation-container {
     /* width: 68.75%; */
     width: 1320px;
     aspect-ratio: 1.7 / 1;
@@ -7,28 +7,20 @@
     opacity: 1;
 }
 
-.auth-form {
-    position: relative;
+.job-creation-form {
+    
+}
+
+.job-connection-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-.signup-form {
-    top: 200px;
-}
 
-.reset-form {
-    top: 200px;
-}
+
 
 #title {
     position: relative;
     left: 180px;
-    top: 150px;
-}
-
-#reset-instructions {
-    font-size: 14px;
-    margin-left: 20px;
+    top: 100px;
 }
