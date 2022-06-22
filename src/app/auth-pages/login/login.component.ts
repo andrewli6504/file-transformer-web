@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthApiService } from 'src/app/services/auth-api/auth-api.service';
-=======
->>>>>>> 2c3f40b (working on signup page)
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-<<<<<<< HEAD
   styleUrls: ['./login.component.scss', '../auth-pages.scss']
 })
 export class LoginComponent implements OnInit {
@@ -57,15 +53,4 @@ export class LoginComponent implements OnInit {
       }, 1000);
     })
   }
-=======
-  styleUrls: ['./login.component.css']
-})
-export class LoginComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
->>>>>>> 2c3f40b (working on signup page)
 }
