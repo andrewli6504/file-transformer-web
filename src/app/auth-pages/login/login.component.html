@@ -1,13 +1,13 @@
 <div class="auth-container centered roundedCorners--large">
     <h1 id="title">Sign In</h1>
     <form novalidate class="auth-form login-form" (ngSubmit)="loginUser()" [formGroup]="loginForm"> 
-        <div class="labeled-input-container">
+        <div class="auth-input-container">
             <ngx-avatar class="avatar" name="Test" size="200"></ngx-avatar>
-            <mat-form-field appearance="fill" class="labeled-input">
+            <mat-form-field appearance="fill" class="auth-input">
                 <mat-label>Username/Email</mat-label>
                 <input matInput formControlName="email">
             </mat-form-field>
-            <mat-form-field appearance="fill" class="labeled-input">
+            <mat-form-field appearance="fill" class="auth-input">
                 <mat-label>Password</mat-label>
                 <input matInput formControlName="password" type="password">
             </mat-form-field>

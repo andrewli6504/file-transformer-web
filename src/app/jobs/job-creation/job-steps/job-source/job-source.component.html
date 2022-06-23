@@ -1,0 +1,37 @@
+<div [formGroup]="parentForm">
+    <form class="job-source-form" formGroupName="source" *ngIf="sourceType=='file'">
+        <div class="job-source-form-column">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Folder Path</mat-label>
+                <input matInput formControlName="folderPath">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>File Name</mat-label>
+                <input matInput formControlName="fileName">
+            </mat-form-field>
+        </div>
+        <div class="job-source-form-column">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>File Type</mat-label>
+                <input matInput formControlName="fileType">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Delimiter</mat-label>
+                <input matInput formControlName="delimiter">
+            </mat-form-field>
+        </div>
+    </form>
+
+    <form class="job-source-form" formGroupName="source" *ngIf="sourceType=='sql'">
+        <mat-form-field appearance="fill" class="small-width">
+            <mat-label>SQL Table Name</mat-label>
+            <input matInput formControlName="sqlTableName">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="small-width">
+            <mat-label>SQL Table Action</mat-label>
+            <input matInput formControlName="sqlTableAction">
+        </mat-form-field>
+    </form>
+    <br>
+    <button mat-raised-button type="submit" id="submit-button" [disabled]="parentForm.get('source').invalid" color="primary">Next</button>    
+</div>

@@ -6,8 +6,9 @@
         <p>Lorem ipsum dolor sit amet</p>
     </div>
 
-    <form class="job-creation-form">
-        <app-job-connection [@slideJobSteps]="jobCreationStep['source']"></app-job-connection>
+    <form class="job-creation-form" [formGroup]="jobCreationForm" (ngSubmit)="advanceForm()">
+        <app-job-connection class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['connections']"></app-job-connection>
+        <app-job-source class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['source']"></app-job-source>
     </form>
 </div>
 

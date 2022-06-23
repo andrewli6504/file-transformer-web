@@ -8,19 +8,53 @@
 }
 
 .job-creation-form {
-    
+    position: relative;
+    top: 200px;
+    display: grid;
+}
+
+.job-step {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .job-connection-form {
+    position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
+.remote-selection {
+    width: 30%;
+}
 
+.job-source-form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
+.job-source-form-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 30%;
+}
 
 #title {
     position: relative;
     left: 180px;
     top: 100px;
+}
+
+#submit-button {
+    float: right;
+    margin-top: 30px;
+    margin-right: 15%;
 }

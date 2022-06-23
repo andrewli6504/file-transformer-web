@@ -1,8 +1,18 @@
-<div class="job-connection-form">
-    <mat-form-field appearance="fill">
-        <mat-label>Select remote connection</mat-label>
-        <mat-select [(value)]="source">
-            <mat-option *ngFor="let con of remoteConnections" [value]="con._id">{{con.connectionName}}</mat-option>
-        </mat-select>
-    </mat-form-field>
+<div [formGroup]="parentForm">
+    <form class="job-connection-form" formGroupName="connections">
+        <mat-form-field class="remote-selection" appearance="fill">
+            <mat-label>Select source remote connection</mat-label>
+            <mat-select formControlName="source">
+                <mat-option *ngFor="let con of remoteConnections" [value]="con">{{con.connectionName}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="remote-selection" appearance="fill">
+            <mat-label>Select destination remote connection</mat-label>
+            <mat-select formControlName="destination">
+                <mat-option *ngFor="let con of remoteConnections" [value]="con">{{con.connectionName}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    <br>
+    <button mat-raised-button type="submit" id="submit-button" [disabled]="parentForm.get('connections').invalid" color="primary">Next</button>    
 </div>
