@@ -1,5 +1,5 @@
 <div [formGroup]="parentForm">
-    <form class="job-form-step" formGroupName="source" *ngIf="sourceType=='file'">
+    <form class="job-form-step" formGroupName="destination" *ngIf="destinationType=='file'">
         <div class="job-form-step-column">
             <mat-form-field appearance="fill" class="full-width">
                 <mat-label>Folder Path</mat-label>
@@ -20,10 +20,9 @@
                 <input matInput formControlName="delimiter">
             </mat-form-field>
         </div>
-        <mat-checkbox>File has headers</mat-checkbox>
     </form>
 
-    <form class="job-form-step" formGroupName="source" *ngIf="sourceType=='sql'">
+    <form class="job-form-step" formGroupName="destination" *ngIf="destinationType=='sql'">
         <mat-form-field appearance="fill" class="small-width">
             <mat-label>SQL Table Name</mat-label>
             <input matInput formControlName="sqlTableName">
@@ -33,11 +32,10 @@
             <input matInput formControlName="sqlTableAction">
         </mat-form-field>
     </form>
-
     <br>
 
     <div class="button-group">
         <button mat-raised-button type="submit" id="back-button" color="primary">Back</button>
-        <button mat-raised-button type="submit" id="next-button" [disabled]="parentForm.get('source').invalid" color="primary">Next</button>
+        <button mat-raised-button type="submit" id="next-button" [disabled]="parentForm.get('destination').invalid" color="primary">Next</button>
     </div>
 </div>

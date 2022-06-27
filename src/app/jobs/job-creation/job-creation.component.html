@@ -6,9 +6,11 @@
         <p>Lorem ipsum dolor sit amet</p>
     </div>
 
-    <form class="job-creation-form" [formGroup]="jobCreationForm" (ngSubmit)="advanceForm()">
+    <form class="job-creation-form" [formGroup]="jobCreationForm" (ngSubmit)="onSubmit($event.submitter.id)">
         <app-job-connection class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['connections']"></app-job-connection>
         <app-job-source class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['source']"></app-job-source>
+        <app-job-destination class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['destination']"></app-job-destination>
+        <app-job-schedule class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['schedule']"></app-job-schedule>
     </form>
 </div>
 
