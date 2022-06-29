@@ -6,6 +6,7 @@ import { AuthApiService } from 'src/app/services/auth-api/auth-api.service';
 import { JobSourceComponent } from './job-steps/job-source/job-source.component';
 import { JobDestinationComponent } from './job-steps/job-destination/job-destination.component';
 import { JobScheduleComponent } from './job-steps/job-schedule/job-schedule.component';
+import { TransformerApiService } from 'src/app/services/transformer-api/transformer-api.service';
 
 @Component({
   selector: 'app-job-creation',
@@ -46,6 +47,7 @@ export class JobCreationComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     public authApiService: AuthApiService,
+    private transformerApiService: TransformerApiService,
     private router: Router,
   ) { }
 
@@ -118,7 +120,7 @@ export class JobCreationComponent implements OnInit {
     }
     else if(this.jobCreationStep["schedule"] == "inProgress") {
       this.jobCreationStep["schedule"] = "complete";
-      //TODO: Redirect to another page
+      this.createJob();
     }
   }
 
@@ -135,5 +137,68 @@ export class JobCreationComponent implements OnInit {
       this.jobCreationStep["schedule"] = "incomplete";
       this.jobCreationStep["destination"] = "inProgress"
     }
+  }
+
+  createJob() {
+    var connections = this.jobCreationForm.get("connections");
+    var source = this.jobCreationForm.get("source");
+    var destination = this.jobCreationForm.get("destination");
+    var schedule = this.jobCreationForm.get("schedule");
+    var jobRequest = {
+      job: {
+        jobName: "Temp Job Name",
+        projectName: "Temp Project Name",
+        createdBy: "Temp User",
+        lastModifiedBy: "Temp User",
+        source: {
+          sqlTableName:   source.get("sqlTableName").value,
+          sqlTableAction: source.get("sqlTableAction").value,
+          folderPath:     source.get("folderPath").value,
+          fileName:       source.get("fileName").value,
+          fileType:       source.get("fileType").value,
+          delimiter:      source.get("delimiter").value,
+          hasHeader:      source.get("hasHeader").value,
+        },
+        destination: {
+          sqlTableName:   destination.get("sqlTableName").value,
+          sqlTableAction: destination.get("sqlTableAction").value,
+          folderPath:     destination.get("folderPath").value,
+          fileName:       destination.get("fileName").value,
+          fileType:       destination.get("fileType").value,
+          delimiter:      destination.get("delimiter").value,
+          mergeOutput:    destination.get("mergeOutput").value,
+        },
+        transform: [{
+          source: connections.get("source").value["_id"]
+        }, {
+          destination: connections.get("destination").value["_id"]
+        }],
+        frequency: schedule.get("frequency").value,
+        time:      this.convertTime(schedule.get("time").value),
+        startDate: schedule.get("datePicker").get("start").value,
+        endDate:   schedule.get("datePicker").get("end").value,
+      },
+      projectId: 1
+    };
+    console.log(jobRequest);
+
+    this.transformerApiService.createJob(jobRequest).subscribe(resp => {
+      console.log(resp);
+    });
+  }
+
+  //Converts time in the format of HH:MM AM/PM into the format HH:MM:SS (24hr)
+  convertTime(time: string) {
+    //AM or PM
+    let period = time.slice(time.indexOf(" "));
+    let hour = time.slice(0, time.indexOf(":"));
+    let minute = time.slice(time.indexOf(":") + 1, time.indexOf(" "));
+    if(period == "PM") {
+      hour += 12;
+    }
+    if(hour.length == 1) {
+      hour = "0" + hour;
+    }
+    return hour + ":" + minute + ":00";
   }
 }
