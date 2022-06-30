@@ -1,0 +1,21 @@
+<mat-toolbar class="navbar">
+    <p id="logo">File Transform</p>
+    <div class="navbar-options" *ngIf="!mobile">
+        <p id="home">Home</p>
+        <p id="projects" (click)="toggleDropdown($event.target)">Projects</p>
+        <p id="settings" (click)="toggleDropdown($event.target)">Settings</p>
+        <p id="help" (click)="toggleDropdown($event.target)">Help</p>
+        <div class="user-options">
+            <p *ngIf="loggedIn">Avatar</p>
+            <p *ngIf="!loggedIn">Register</p>
+            <p *ngIf="!loggedIn">Log in</p>
+        </div>
+        <span></span>
+    </div>
+    <div class="navbar-mobile" *ngIf="mobile">
+
+    </div>
+</mat-toolbar>
+<app-projects-card *ngIf="showCard['projects']">PROJECTS</app-projects-card>
+<app-settings-card *ngIf="showCard['settings']">SETTINGS</app-settings-card>
+<app-help-card *ngIf="showCard['help']">HELP</app-help-card>

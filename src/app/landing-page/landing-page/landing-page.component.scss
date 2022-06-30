@@ -1,0 +1,44 @@
+.landing-page {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.main-info {
+    display: inline-block;
+    width: 30%;
+    margin-left: 15%;
+    margin-top: 10%;
+    vertical-align: top;
+    font-size: 14px;
+}
+
+.main-info > p {
+    margin-left: 78px;
+    margin-top: 0;
+    width: 400px;
+}
+
+.main-info > button {
+    margin-left: 78px;
+    margin-top: 10px;
+}
+
+.landing-image {
+    display: inline-block;
+    width: 600px;
+    margin-left: 10%;
+}
+
+.info-card-container {
+    display: flex;
+    justify-content: center;
+}
+
+.info-card {
+    width: 25%;
+}
+
+.info-card:hover {
+    background-color: green;
+}
