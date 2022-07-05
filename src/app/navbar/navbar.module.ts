@@ -16,7 +16,6 @@ import { HelpCardComponent } from './cards/help-card/help-card.component';
   ],
   imports: [
     CommonModule,
-    MatToolbarModule,
   ],
   exports: [
     NavbarComponent

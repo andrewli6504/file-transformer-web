@@ -1,4 +1,4 @@
-<mat-toolbar class="navbar">
+<!-- <mat-toolbar class="navbar">
     <p id="logo">File Transform</p>
     <div class="navbar-options" *ngIf="!mobile">
         <p id="home">Home</p>
@@ -18,4 +18,37 @@
 </mat-toolbar>
 <app-projects-card *ngIf="showCard['projects']">PROJECTS</app-projects-card>
 <app-settings-card *ngIf="showCard['settings']">SETTINGS</app-settings-card>
-<app-help-card *ngIf="showCard['help']">HELP</app-help-card>
+<app-help-card *ngIf="showCard['help']">HELP</app-help-card> -->
+<nav class="navbar navbar-expand-md navbar-light bg-white py-4 shadow">
+    <div class="container-fluid">
+        <a class="navbar-brand ms-3" href="#">File Transformer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="#">Projects</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="#">Settings</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="#">Help</a>
+                </li>
+                <li *ngIf="!loggedIn" class="nav-item mx-2">
+                    <a class="nav-link" href="#">Register</a>
+                </li>
+                <li *ngIf="!loggedIn" class="nav-item mx-2">
+                    <a class="nav-link" href="#">Log in</a>
+                </li>
+                <li *ngIf="loggedIn" class="nav-item mx-2">
+                    <a class="nav-link" href="#">User</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
