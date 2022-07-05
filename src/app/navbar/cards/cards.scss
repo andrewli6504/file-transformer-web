@@ -1,54 +1,8 @@
-.card {
-    width: 67%;
-    height: 28%;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white 0% 0% no-repeat padding-box;
+.col > .row > .card-body {
+    margin: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+}
+
+
+.col > .row > .card-body:hover {
     box-shadow: 0px 5px 6px #00000029;
-    border-radius: 8px;
-    padding: 2%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    position: absolute;
-}
-
-.selection-title {
-    width: 20%;
-}
-
-.selection-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 25%;
-}
-
-.selection-card {
-    padding: 20px;
-}
-
-.selection-card:hover {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 5px 6px #00000029;
-    border-radius: 8px;
-}
-
-h1, h3, p {
-    margin: 0;
-}
-
-.description {
-    font-size: 12px;
-    color: grey;
-    margin-left: 5px;
-}
-
-.learn-more {
-    font-size: 16px;
-    color: green;
-    margin-left: 10px;
 }
