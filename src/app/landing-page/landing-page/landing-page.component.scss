@@ -1,45 +1,47 @@
-.landing-page {
-    background-color: white;
-    height: 100%;
-    width: 100%;
+img {
+    max-width: 100%;
 }
 
-.main-info {
-    display: inline-block;
-    width: 30%;
-    margin-left: 15%;
-    margin-top: 10%;
-    vertical-align: top;
-    font-size: 14px;
+.description p, .description button {
+    margin-left: 60px;
 }
 
-.main-info > p {
-    margin-left: 78px;
-    margin-top: 0;
-    width: 400px;
-}
-
-.main-info > button {
-    margin-left: 78px;
-    margin-top: 10px;
+.description {
+    width: 450px;
+    padding-left: 100px;
 }
 
 .landing-image {
-    display: inline-block;
-    width: 600px;
-    margin-left: 10%;
+    width: 550px;
 }
 
-.info-card-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+
+.info-container {
+    height: 300px;
+    width: 90%;
 }
 
-.info-card {
-    width: 25%;
+.info {
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 400px;
 }
 
-.info-card:hover {
-    background-color: green;
+.info:hover {
+    background-color: #329054;
+    color: white;
+}
+
+.info p, .info b{
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.info b {
+    color: #329054;
+}
+
+.info h5 {
+    font-weight: 800;
 }

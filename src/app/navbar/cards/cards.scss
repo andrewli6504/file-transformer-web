@@ -1,8 +1,24 @@
+.card {
+    min-width: 75%;
+}
+
 .col > .row > .card-body {
     margin: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
 }
 
-
 .col > .row > .card-body:hover {
     box-shadow: 0px 5px 6px #00000029;
+    border-radius: 8px;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
+.learn-more {
+    color: #329054;
+}
+
+.card-title {
+    font-weight: 700;
 }

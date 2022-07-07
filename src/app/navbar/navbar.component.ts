@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.loggedIn = false;
+    this.loggedIn = true;
     this.clearDropdowns();
   }
 

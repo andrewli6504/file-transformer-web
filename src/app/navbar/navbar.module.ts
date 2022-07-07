@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { ProjectsCardComponent } from './cards/projects-card/projects-card.component';
 import { SettingsCardComponent } from './cards/settings-card/settings-card.component';
 import { HelpCardComponent } from './cards/help-card/help-card.component';
+import { AvatarModule } from 'ngx-avatar';
 
 
 @NgModule({
@@ -16,6 +16,7 @@ import { HelpCardComponent } from './cards/help-card/help-card.component';
   ],
   imports: [
     CommonModule,
+    AvatarModule,
   ],
   exports: [
     NavbarComponent

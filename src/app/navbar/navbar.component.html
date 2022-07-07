@@ -1,21 +1,3 @@
-<!-- <mat-toolbar class="navbar">
-    <p id="logo">File Transform</p>
-    <div class="navbar-options" *ngIf="!mobile">
-        <p id="home">Home</p>
-        <p id="projects" (click)="toggleDropdown($event.target)">Projects</p>
-        <p id="settings" (click)="toggleDropdown($event.target)">Settings</p>
-        <p id="help" (click)="toggleDropdown($event.target)">Help</p>
-        <div class="user-options">
-            <p *ngIf="loggedIn">Avatar</p>
-            <p *ngIf="!loggedIn">Register</p>
-            <p *ngIf="!loggedIn">Log in</p>
-        </div>
-        <span></span>
-    </div>
-    <div class="navbar-mobile" *ngIf="mobile">
-
-    </div>
-</mat-toolbar> -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 shadow">
     <div class="container-fluid">
         <a class="navbar-brand ms-3" href="#">File Transformer</a>
@@ -23,32 +5,40 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item mx-2">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex justify-content-around w-75">
+                <li class="nav-item">
                     <a class="nav-link" href="#">Home</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class="nav-item">
                     <a class="nav-link user-select-none" id="projects" (click)="toggleDropdown($event.target)">Projects</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class="nav-item">
                     <a class="nav-link user-select-none" id="settings" (click)="toggleDropdown($event.target)">Settings</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class="nav-item">
                     <a class="nav-link user-select-none" id="help" (click)="toggleDropdown($event.target)">Help</a>
                 </li>
-                <li *ngIf="!loggedIn" class="nav-item mx-2">
+                <li *ngIf="!loggedIn" class="nav-item">
                     <a class="nav-link" href="#">Register</a>
                 </li>
-                <li *ngIf="!loggedIn" class="nav-item mx-2">
+                <li *ngIf="!loggedIn" class="nav-item">
                     <a class="nav-link" href="#">Log in</a>
                 </li>
-                <li *ngIf="loggedIn" class="nav-item mx-2">
-                    <a class="nav-link" href="#">User</a>
+                <li *ngIf="loggedIn" class="nav-item">
+                    <a class="nav-link container d-flex p-0 m-0" href="#">
+                        <ngx-avatar class="avatar" name="Andrew Li" size="40"></ngx-avatar>
+                        <div class="ms-2">
+                            <p class="name m-0">Andrew Li</p>
+                            <p class="status ms-1">Online</p>
+                        </div>
+                    </a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<app-projects-card *ngIf="showCard['projects']">PROJECTS</app-projects-card>
-<app-settings-card *ngIf="showCard['settings']">SETTINGS</app-settings-card>
-<app-help-card *ngIf="showCard['help']">HELP</app-help-card>
+<div class="w-100 position-relative">
+    <app-projects-card *ngIf="showCard['projects']" class="position-absolute">PROJECTS</app-projects-card>
+    <app-settings-card *ngIf="showCard['settings']" class="position-absolute">SETTINGS</app-settings-card>
+    <app-help-card *ngIf="showCard['help']" class="position-absolute">HELP</app-help-card>
+</div>
