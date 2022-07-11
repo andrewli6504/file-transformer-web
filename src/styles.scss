@@ -3,3 +3,17 @@ $primary: #329054;
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap";
 @import 'custom-theme.scss';
+
+app-footer {
+    margin-top: auto;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+app-footer {
+    margin-top: auto;
+}

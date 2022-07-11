@@ -1,4 +1,4 @@
-<div class="auth-container centered roundedCorners--large">
+<!-- <div class="auth-container centered roundedCorners--large">
     <h1 id="title">Sign Up</h1>
     <form novalidate class="auth-form signup-form" (ngSubmit)="signupUser()" [formGroup]="signupForm"> 
         <div class="auth-input-container">
@@ -26,5 +26,26 @@
         <button mat-raised-button type="submit" id="submit-button" [disabled]="signupForm.invalid" color="primary">Register</button>
         <br>
         <u><a href="/login">Already registered? Sign in</a></u>
+    </form>
+</div> -->
+
+<div class="container bg-light">
+    <form novalidate class="d-flex flex-column" (ngSubmit)="signupUser()" [formGroup]="signupForm"> 
+        <mat-form-field appearance="fill" class="auth-input--names">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="auth-input--names">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="auth-input">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="auth-input">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password">
+        </mat-form-field>
     </form>
 </div>
