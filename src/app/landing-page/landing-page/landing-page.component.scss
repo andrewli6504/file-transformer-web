@@ -1,25 +1,25 @@
 img {
-    max-width: 100%;
+    height: auto;
 }
 
 @media(min-width: 992px) {
     .description {
-        width: 450px;
-        padding-left: 100px;
+        height: 550px;
     }
 
     .description p, .description button {
         margin-left: 60px;
+        max-width: 360px;
     }
 
-    .landing-image {
-        width: 550px;
+    .landing-image img {
+        max-width: 550px;
     }
 }
 
 @media(max-width: 992px) {
-    .description, .landing-image {
-        max-width: 576px;
+    .description {
+        max-width: 450px;
         margin: auto;
         text-align: center;
     }
