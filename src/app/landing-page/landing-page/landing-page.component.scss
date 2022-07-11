@@ -2,17 +2,27 @@ img {
     max-width: 100%;
 }
 
-.description p, .description button {
-    margin-left: 60px;
+@media(min-width: 992px) {
+    .description {
+        width: 450px;
+        padding-left: 100px;
+    }
+
+    .description p, .description button {
+        margin-left: 60px;
+    }
+
+    .landing-image {
+        width: 550px;
+    }
 }
 
-.description {
-    width: 450px;
-    padding-left: 100px;
-}
-
-.landing-image {
-    width: 550px;
+@media(max-width: 992px) {
+    .description, .landing-image {
+        max-width: 576px;
+        margin: auto;
+        text-align: center;
+    }
 }
 
 
@@ -45,3 +55,4 @@ img {
 .info h5 {
     font-weight: 800;
 }
+
