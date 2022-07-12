@@ -4,7 +4,7 @@ img {
 
 @media(min-width: 992px) {
     .description {
-        height: 550px;
+        max-height: 550px;
     }
 
     .description p, .description button {
@@ -22,6 +22,10 @@ img {
         max-width: 450px;
         margin: auto;
         text-align: center;
+    }
+
+    img {
+        max-width: 100%;
     }
 }
 

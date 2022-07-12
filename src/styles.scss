@@ -8,12 +8,12 @@ app-footer {
     margin-top: auto;
 }
 
+router-outlet + * {
+    flex: 1;
+}
+
 app-root {
     display: flex;
     flex-direction: column;
     height: 100vh;
-}
-
-app-footer {
-    margin-top: auto;
 }
