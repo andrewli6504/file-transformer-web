@@ -29,23 +29,51 @@
     </form>
 </div> -->
 
-<div class="background">
-    <form novalidate class="d-flex flex-column" (ngSubmit)="signupUser()" [formGroup]="signupForm"> 
-        <mat-form-field appearance="fill" class="auth-input--names">
+<app-form-card class="d-flex flex-column h-100 p-3">
+    <h1 class="mb-auto">Sign Up</h1>
+
+    <form novalidate class="d-flex flex-column my-4" (ngSubmit)="signupUser()" [formGroup]="signupForm"> 
+        <mat-form-field appearance="fill" class="">
             <mat-label>First Name</mat-label>
             <input matInput formControlName="firstName">
         </mat-form-field>
-        <mat-form-field appearance="fill" class="auth-input--names">
+        <mat-form-field appearance="fill" class="">
             <mat-label>Last Name</mat-label>
             <input matInput formControlName="lastName">
         </mat-form-field>
-        <mat-form-field appearance="fill" class="auth-input">
+        <mat-form-field appearance="fill" class="">
             <mat-label>Email</mat-label>
             <input matInput formControlName="email">
         </mat-form-field>
-        <mat-form-field appearance="fill" class="auth-input">
+        <mat-form-field appearance="fill" class="">
             <mat-label>Password</mat-label>
             <input matInput formControlName="password" type="password">
         </mat-form-field>
+        
+        <div class="form-check">        
+            <input class="form-check-input" type="checkbox" id="tos-checkbox">
+            <label class="form-check-label" id="tos-checkbox" for="tos-checkbox">I Agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#tos">Terms and Conditions</a></label>
+        </div>
+
+        <div class="modal fade" id="tos" tabindex="-1" aria-labelledby="tosLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tosLabel">Terms and Conditions</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <button mat-raised-button type="submit" class="w-100 align-self-center" [disabled]="signupForm.invalid" color="primary">Register</button>
+        <br>
+        <a href="/login">Already registered? Sign in</a>
     </form>
-</div>
+</app-form-card>

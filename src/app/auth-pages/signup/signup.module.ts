@@ -9,11 +9,13 @@ import {MatButtonModule} from '@angular/material/button';
 
 import { SignupRoutingModule } from './signup-routing.module';
 import { SignupComponent } from './signup.component';
+import { FormCardComponent } from 'src/app/common/form-card/form-card.component';
 
 
 @NgModule({
   declarations: [
-    SignupComponent
+    SignupComponent,
+    FormCardComponent,
   ],
   imports: [
     CommonModule,
