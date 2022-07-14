@@ -9,13 +9,12 @@ import {MatButtonModule} from '@angular/material/button';
 
 import { SignupRoutingModule } from './signup-routing.module';
 import { SignupComponent } from './signup.component';
-import { FormCardComponent } from 'src/app/common/form-card/form-card.component';
+import { ComponentModule } from 'src/app/common/component.module';
 
 
 @NgModule({
   declarations: [
     SignupComponent,
-    FormCardComponent,
   ],
   imports: [
     CommonModule,
@@ -26,6 +25,7 @@ import { FormCardComponent } from 'src/app/common/form-card/form-card.component'
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
+    ComponentModule,
   ]
 })
 export class SignupModule { }

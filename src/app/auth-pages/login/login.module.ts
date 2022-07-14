@@ -9,11 +9,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { AvatarModule } from 'ngx-avatar';
+import { ComponentModule } from 'src/app/common/component.module';
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +26,7 @@ import { AvatarModule } from 'ngx-avatar';
     FormsModule,
     ReactiveFormsModule,
     AvatarModule,
+    ComponentModule,
   ]
 })
 export class LoginModule { }

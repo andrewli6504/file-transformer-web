@@ -1,70 +1,25 @@
-.auth-container {
-    width: 68.75%;
-    // width: 1320px;
-    aspect-ratio: 1.7 / 1;
-    background-color: white;
-    box-shadow: 0px 1px 4px #00000029;
-    opacity: 1;
-}
+@media(min-width: 992px) {
+    .submit-button {
+        margin: auto;
+        max-width: 400px;
+    }
 
-.auth-form {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    .input-form {
+        width: 700px;
+    }
 
-.auth-input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    margin: auto;
-}
+    .input-large {
+        width: 400px;
+    }
 
-.auth-input-container--names {
-    align-self: stretch;
-    display: flex;
-    justify-content: center;
-}
+    .input-small {
+        width: 240px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 
-.auth-input {
-    width: 70%;
-}
-
-.auth-input--names {
-    width: 45%;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.avatar {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 15px 15px #00000029;
-    margin-bottom: 50px;
-}
-
-#submit-button {
-    width: 35%;
-    height: 40px;
-}
-
-
-.signup-form {
-    top: 18%;
-}
-
-.reset-form {
-    top: 200px;
-}
-
-#title {
-    position: relative;
-    left: 16%;
-    top: 16%;
-}
-
-#reset-instructions {
-    font-size: 14px;
-    margin-left: 20px;
+    h1 {
+        margin-left: 120px;
+        margin-top: 120px;
+    }
 }
