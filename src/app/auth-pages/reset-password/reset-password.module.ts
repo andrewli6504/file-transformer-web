@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ComponentModule } from 'src/app/common/component.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
+    ComponentModule,
   ]
 })
 export class ResetPasswordModule { }
