@@ -24,8 +24,8 @@ export class SignupComponent implements OnInit {
 
   initializeUserForm() {
     this.signupForm = this.formBuilder.group({
-      firstName: new FormControl("", [Validators.pattern("[a-zA-Z]+ {0,1}[a-zA-Z]* {0,1}[a-zA-Z]*$")]),
-      lastName: new FormControl("", [Validators.pattern("[a-zA-Z]+ {0,1}[a-zA-Z]* {0,1}[a-zA-Z]*$")]),
+      firstName: new FormControl("", [Validators.required, Validators.pattern("[a-zA-Z]+ {0,1}[a-zA-Z]* {0,1}[a-zA-Z]*$")]),
+      lastName: new FormControl("", [Validators.required, Validators.pattern("[a-zA-Z]+ {0,1}[a-zA-Z]* {0,1}[a-zA-Z]*$")]),
       email: new FormControl("", [Validators.required, Validators.email]),
       password: new FormControl("", [Validators.required]),
       tos: new FormControl("", [Validators.required])
