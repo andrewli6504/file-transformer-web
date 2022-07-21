@@ -15,7 +15,7 @@ import { TransformerApiService } from 'src/app/services/transformer-api/transfor
   animations: [
     trigger('slideJobSteps', [
       state("incomplete", style({
-        transform: "translateX(120%)",
+        transform: "translateX(220%)",
         // backgroundColor: "blue"
       })),
       state("inProgress", style({
@@ -23,7 +23,7 @@ import { TransformerApiService } from 'src/app/services/transformer-api/transfor
         // backgroundColor: "white"
       })),
       state("complete", style({
-        transform: "translateX(-120%)",
+        transform: "translateX(-220%)",
         // backgroundColor: "red"
       })),
       transition("incomplete <=> inProgress", [

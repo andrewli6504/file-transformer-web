@@ -1,13 +1,13 @@
 <div [formGroup]="parentForm" class="h-100">
     <h1 class="">Task Creation</h1>
-    <form class="d-flex flex-column justify-content-center h-100" formGroupName="connections">
-        <mat-form-field class="my-3" appearance="fill">
+    <form class="d-flex flex-column justify-content-center align-items-lg-center h-100" formGroupName="connections">
+        <mat-form-field class="my-3 input-large" appearance="fill">
             <mat-label>Select source remote connection</mat-label>
             <mat-select formControlName="source">
                 <mat-option *ngFor="let con of remoteConnections" [value]="con">{{con.connectionName}}</mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field class="my-3" appearance="fill">
+        <mat-form-field class="my-3 input-large" appearance="fill">
             <mat-label>Select destination remote connection</mat-label>
             <mat-select formControlName="destination">
                 <mat-option *ngFor="let con of remoteConnections" [value]="con">{{con.connectionName}}</mat-option>
