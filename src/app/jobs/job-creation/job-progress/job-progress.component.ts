@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobProgressComponent implements OnInit {
 
+  steps: String[];
+  currentStep: String;
+  
+
   constructor() { }
 
   ngOnInit(): void {
+    this.steps = ["Step 1", "Step 2"];
   }
 
 }

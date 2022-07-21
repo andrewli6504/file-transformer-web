@@ -95,6 +95,7 @@ export class JobCreationComponent implements OnInit {
   }
 
   onSubmit(button) {
+    console.log(button);
     if(button == "next-button") {
       this.advanceForm();
     }

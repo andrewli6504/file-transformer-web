@@ -1,7 +1,7 @@
 <app-form-card class="d-flex flex-column h-100 p-3">
     <h1 class="mb-auto">Sign In</h1>
 
-    <form novalidate class="input-form align-self-lg-center d-flex flex-column align-items-lg-center my-4 mt-lg-0" (ngSubmit)="loginUser()" [formGroup]="loginForm"> 
+    <form class="input-form align-self-lg-center d-flex flex-column align-items-lg-center my-4 mt-lg-0" (ngSubmit)="loginUser()" [formGroup]="loginForm"> 
         <ngx-avatar class="mx-auto mb-5" name="Test" size="140"></ngx-avatar>
         <mat-form-field appearance="fill" class="input-large mb-2">
             <mat-label>Username/Email</mat-label>

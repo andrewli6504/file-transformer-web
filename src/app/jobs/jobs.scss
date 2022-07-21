@@ -1,17 +1,43 @@
-.job-creation-container {
-    /* width: 68.75%; */
-    width: 1320px;
-    aspect-ratio: 1.7 / 1;
-    background-color: white;
-    box-shadow: 0px 1px 4px #00000029;
-    opacity: 1;
+@media(min-width: 992px) {
+    .submit-button {
+        margin: auto;
+        max-width: 400px;
+    }
+
+    .input-form {
+        width: 700px;
+    }
+
+    .input-large {
+        width: 400px;
+    }
+
+    .input-small {
+        width: 240px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    h1 {
+        margin-left: 120px;
+        margin-top: 120px;
+    }
 }
 
-.job-creation-form {
-    position: relative;
-    top: 200px;
-    display: grid;
-}
+// .job-creation-container {
+//     /* width: 68.75%; */
+//     width: 1320px;
+//     aspect-ratio: 1.7 / 1;
+//     background-color: white;
+//     box-shadow: 0px 1px 4px #00000029;
+//     opacity: 1;
+// }
+
+// .job-creation-form {
+//     position: relative;
+//     top: 200px;
+//     display: grid;
+// }
 
 .job-step {
     display: block;
@@ -19,36 +45,36 @@
     grid-row: 1;
 }
 
-.job-form-step {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
+// .job-form-step {
+//     position: relative;
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     justify-content: space-evenly;
+// }
 
-.remote-selection {
-    width: 30%;
-}
+// .remote-selection {
+//     width: 30%;
+// }
 
-.job-form-step-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 30%;
-}
+// .job-form-step-column {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-evenly;
+//     width: 30%;
+// }
 
-.button-group {
-    float: right;
-    margin-top: 30px;
-    margin-right: 15%;
-    display: flex;
-    gap: 15px;
-}
+// .button-group {
+//     float: right;
+//     margin-top: 30px;
+//     margin-right: 15%;
+//     display: flex;
+//     gap: 15px;
+// }
 
-#title {
-    position: relative;
-    left: 180px;
-    top: 100px;
-}
+// #title {
+//     position: relative;
+//     left: 180px;
+//     top: 100px;
+// }

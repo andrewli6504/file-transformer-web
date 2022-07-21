@@ -1,6 +1,4 @@
-<div style="height:500px"></div>
-
-<div class="job-creation-container centered roundedCorners--small">
+<!-- <div class="job-creation-container centered roundedCorners--small">
     <div id="title">
         <h1>Task Creation</h1>
         <p>Lorem ipsum dolor sit amet</p>
@@ -14,8 +12,26 @@
     </form>
 </div>
 
+<app-job-progress></app-job-progress> -->
 
-
-
-
-<app-job-progress></app-job-progress>
+<app-form-card class="d-flex flex-column h-100 p-3">
+    <form class="input-form d-flex flex-column justify-content-between h-100" (ngSubmit)="onSubmit($event.submitter.id)">
+        <h1 class="">Task Creation</h1>
+        
+        <div class="position-relative d-grid">
+            <app-job-connection class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['connections']"></app-job-connection>
+            <app-job-source class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['source']"></app-job-source>    
+        </div>
+        
+        
+        <div>
+            <app-job-progress></app-job-progress>
+            <button type="submit" id="back-button">
+                <span class="">Previous</span>
+            </button>
+            <button type="submit" id="next-button">
+                <span class="">Next</span>
+            </button>
+        </div>
+    </form>
+</app-form-card>
