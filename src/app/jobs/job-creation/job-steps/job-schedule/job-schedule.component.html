@@ -1,6 +1,7 @@
-<div [formGroup]="parentForm">
-    <form formGroupName="schedule" class="job-form-step">
-        <mat-form-field appearance="fill" class="small-width">
+<div [formGroup]="parentForm" class="h-100">
+    <h1 class="">Schedule</h1>
+    <form formGroupName="schedule" class="d-flex flex-column h-100 justify-content-center">
+        <mat-form-field appearance="fill" class="my-3">
             <mat-label>Enter a date range</mat-label>
             <mat-date-range-input [rangePicker]="picker" formGroupName="datePicker">
                 <input matStartDate formControlName="start" placeholder="Start date">
@@ -11,24 +12,18 @@
             <mat-date-range-picker #picker></mat-date-range-picker>
         </mat-form-field>
 
-        <div class="job-form-step-column">
-            <mat-form-field class="full-width" appearance="fill">
-                <mat-label>Run Frequency</mat-label>
-                <mat-select formControlName="frequency">
-                    <mat-option value="daily">Daily</mat-option>
-                    <mat-option value="weekly">Weekly</mat-option>
-                    <mat-option value="monthly">Monthly</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <mat-form-field appearance="fill" class="full-width">
-                <mat-label>Run Time</mat-label>
-                <input matInput formControlName="time" [ngxTimepicker]="default">
-                <ngx-material-timepicker #default></ngx-material-timepicker>
-            </mat-form-field>
-        </div>
+        <mat-form-field appearance="fill" class="my-3">
+            <mat-label>Run Frequency</mat-label>
+            <mat-select formControlName="frequency">
+                <mat-option value="daily">Daily</mat-option>
+                <mat-option value="weekly">Weekly</mat-option>
+                <mat-option value="monthly">Monthly</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="my-3">
+            <mat-label>Run Time</mat-label>
+            <input matInput formControlName="time" [ngxTimepicker]="default">
+            <ngx-material-timepicker #default></ngx-material-timepicker>
+        </mat-form-field>
     </form>
-    <div class="button-group">
-        <button mat-raised-button type="submit" id="back-button" color="primary">Back</button>
-        <button mat-raised-button type="submit" id="next-button" [disabled]="parentForm.get('schedule').invalid" color="primary">Next</button>
-    </div>
 </div>

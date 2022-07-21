@@ -94,6 +94,22 @@ export class JobCreationComponent implements OnInit {
     })
   }
 
+  isValid() {
+    if(this.jobCreationStep['connections'] == 'inProgress') {
+      return this.jobCreationForm.controls['connections'].valid;
+    }
+    else if(this.jobCreationStep['source'] == 'inProgress') {
+      return this.jobCreationForm.controls['source'].valid;
+    }
+    else if(this.jobCreationStep['destination'] == 'inProgress') {
+      return this.jobCreationForm.controls['destination'].valid;
+    }
+    else if(this.jobCreationStep['schedule'] == 'inProgress') {
+      return this.jobCreationForm.controls['schedule'].valid;
+    }
+    return false;
+  }
+
   onSubmit(button) {
     console.log(button);
     if(button == "next-button") {
@@ -120,7 +136,6 @@ export class JobCreationComponent implements OnInit {
       this.jobCreationStep["schedule"] = "inProgress"
     }
     else if(this.jobCreationStep["schedule"] == "inProgress") {
-      this.jobCreationStep["schedule"] = "complete";
       this.createJob();
     }
   }

@@ -1,5 +1,6 @@
 <div [formGroup]="parentForm" class="h-100">
-    <form class="d-flex flex-column" formGroupName="source" *ngIf="sourceType=='file'">
+    <h1 class="">Source</h1>
+    <form class="d-flex flex-column h-100 justify-content-center" formGroupName="source" *ngIf="sourceType=='file'">
         <mat-form-field appearance="fill" class="my-2">
             <mat-label>Folder Path</mat-label>
             <input matInput formControlName="folderPath">
@@ -19,7 +20,7 @@
         <mat-checkbox>File has headers</mat-checkbox>
     </form>
 
-    <form class="d-flex flex-column" formGroupName="source" *ngIf="sourceType=='sql'">
+    <form class="d-flex flex-column justify-content-center h-100" formGroupName="source" *ngIf="sourceType=='sql'">
         <mat-form-field appearance="fill" class="my-3">
             <mat-label>SQL Table Name</mat-label>
             <input matInput formControlName="sqlTableName">
