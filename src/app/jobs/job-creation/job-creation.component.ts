@@ -62,6 +62,7 @@ export class JobCreationComponent implements OnInit {
   initializeJobForm() {
     this.jobCreationForm = this.formBuilder.group({
       connections: new FormGroup({
+        taskName: new FormControl("", [Validators.required]),
         source: new FormControl("", [Validators.required]),
         destination: new FormControl("", [Validators.required])
       }),
@@ -111,7 +112,6 @@ export class JobCreationComponent implements OnInit {
   }
 
   onSubmit(button) {
-    console.log(button);
     if(button == "next-button") {
       this.advanceForm();
     }
@@ -162,7 +162,7 @@ export class JobCreationComponent implements OnInit {
     var schedule = this.jobCreationForm.get("schedule");
     var jobRequest = {
       job: {
-        jobName: "Temp Job Name",
+        jobName: connections.get("taskName").value,
         projectName: "Temp Project Name",
         createdBy: "Temp User",
         lastModifiedBy: "Temp User",

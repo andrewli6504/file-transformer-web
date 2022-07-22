@@ -15,7 +15,7 @@
 <app-job-progress></app-job-progress> -->
 
 <app-form-card class="d-flex flex-column w-100 h-100 p-3">
-    <form class="d-flex flex-column justify-content-between w-100 h-100" (ngSubmit)="onSubmit($event.submitter.id)">
+    <form class="d-flex flex-column justify-content-between overflow-hidden w-100 h-100" (ngSubmit)="onSubmit($event.submitter.id)">
         
         <div class="position-relative d-grid flex-grow-1 input-form align-self-center">
             <app-job-connection class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['connections']"></app-job-connection>
@@ -26,13 +26,15 @@
         
         
         <div class="mt-4">
-            <app-job-progress></app-job-progress>
-            <button mat-raised-button color="primary" type="submit" id="back-button" [disabled]="this.jobCreationStep['connections']=='inProgress'">
-                <span class="">Previous</span>
-            </button>
-            <button mat-raised-button color="primary" type="submit" id="next-button" [disabled]="!isValid()">
-                <span class="">Next</span>
-            </button>
+            <!-- <app-job-progress></app-job-progress> -->
+            <div class="d-flex justify-content-between">
+                <button mat-raised-button color="primary" type="submit" id="back-button" [disabled]="this.jobCreationStep['connections']=='inProgress'">
+                    <span class="">Back</span>
+                </button>
+                <button mat-raised-button color="primary" type="submit" id="next-button" [disabled]="!isValid()">
+                    <span class="">Next</span>
+                </button>
+            </div>
         </div>
     </form>
 </app-form-card>

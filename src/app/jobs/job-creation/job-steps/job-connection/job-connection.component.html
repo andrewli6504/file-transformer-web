@@ -1,6 +1,10 @@
-<div [formGroup]="parentForm" class="h-100">
+<div [formGroup]="parentForm" class="d-flex flex-column h-100">
     <h1 class="">Task Creation</h1>
-    <form class="d-flex flex-column justify-content-center align-items-lg-center h-100" formGroupName="connections">
+    <form class="d-flex flex-column justify-content-center align-items-lg-center flex-grow-1" formGroupName="connections">
+        <mat-form-field appearance="fill" class="my-3 input-large">
+            <mat-label>Task Name</mat-label>
+            <input matInput formControlName="taskName">
+        </mat-form-field>
         <mat-form-field class="my-3 input-large" appearance="fill">
             <mat-label>Select source remote connection</mat-label>
             <mat-select formControlName="source">
