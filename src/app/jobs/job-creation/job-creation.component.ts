@@ -32,6 +32,23 @@ import { TransformerApiService } from 'src/app/services/transformer-api/transfor
       transition("inProgress <=> complete", [
         animate('200ms ease-in')
       ])
+    ]),
+    trigger('progressSteps', [
+      state("inProgress", style({
+        "flex": "1",
+        "background-color": "green"
+      })),
+      state("incomplete", style({
+        "flex": "0",
+        "background-color": "lightgrey"
+      })),
+      state("complete", style({
+        "flex": "0",
+        "background-color": "lightgrey"
+      })),
+      transition("inProgress <=> *", [
+        animate('2000ms ease-in')
+      ])
     ])
   ]
 })

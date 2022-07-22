@@ -27,6 +27,9 @@
         
         <div class="mt-4">
             <!-- <app-job-progress></app-job-progress> -->
+            <div class="d-flex job-progress">
+                <div *ngFor="let step of jobCreationStep | keyvalue" class="progress-step" [@progressSteps]="step.value"></div>
+            </div>
             <div class="d-flex justify-content-between">
                 <button mat-raised-button color="primary" type="submit" id="back-button" [disabled]="this.jobCreationStep['connections']=='inProgress'">
                     <span class="">Back</span>
