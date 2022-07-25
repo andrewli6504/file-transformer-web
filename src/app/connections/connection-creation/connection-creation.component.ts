@@ -12,4 +12,8 @@ export class ConnectionCreationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(id) {
+
+  }
+
 }
