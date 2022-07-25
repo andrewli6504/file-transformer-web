@@ -28,3 +28,21 @@
     margin: 3px;
     border-radius: 5px;
 }
+
+.progress-count {
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    background-color: #329054;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
+
+.progress-dots {
+    min-width: 2px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: lightgrey;
+    margin-right: 1px;
+}

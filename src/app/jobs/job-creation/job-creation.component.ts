@@ -47,7 +47,7 @@ import { TransformerApiService } from 'src/app/services/transformer-api/transfor
         "background-color": "lightgrey"
       })),
       transition("inProgress <=> *", [
-        animate('2000ms ease-in')
+        animate('200ms ease-in')
       ])
     ])
   ]
@@ -58,8 +58,9 @@ export class JobCreationComponent implements OnInit {
   @ViewChild(JobDestinationComponent) destination: JobDestinationComponent;
   @ViewChild(JobScheduleComponent) schedule: JobScheduleComponent;
 
-  jobCreationStep = [];
+  jobCreationStep: Map<string, string>;
   jobCreationForm: FormGroup;
+  progressDotsNum = Array(7);
 
   constructor(
     private formBuilder: FormBuilder,
@@ -69,10 +70,16 @@ export class JobCreationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.jobCreationStep["connections"] = "inProgress";
-    this.jobCreationStep["source"] = "incomplete";
-    this.jobCreationStep["destination"] = "incomplete";
-    this.jobCreationStep["schedule"] = "incomplete";
+    // this.jobCreationStep["connections"] = "inProgress";
+    // this.jobCreationStep["source"] = "incomplete";
+    // this.jobCreationStep["destination"] = "incomplete";
+    // this.jobCreationStep["schedule"] = "incomplete";
+    this.jobCreationStep = new Map<string, string>();
+    this.jobCreationStep.set("connections", "inProgress");
+    this.jobCreationStep.set("source", "incomplete");
+    this.jobCreationStep.set("destination", "incomplete");
+    this.jobCreationStep.set("schedule", "incomplete");
+    console.log(this.jobCreationStep);
     this.initializeJobForm();
   }
 
@@ -113,16 +120,16 @@ export class JobCreationComponent implements OnInit {
   }
 
   isValid() {
-    if(this.jobCreationStep['connections'] == 'inProgress') {
+    if(this.jobCreationStep.get('connections') == 'inProgress') {
       return this.jobCreationForm.controls['connections'].valid;
     }
-    else if(this.jobCreationStep['source'] == 'inProgress') {
+    else if(this.jobCreationStep.get('source') == 'inProgress') {
       return this.jobCreationForm.controls['source'].valid;
     }
-    else if(this.jobCreationStep['destination'] == 'inProgress') {
+    else if(this.jobCreationStep.get('destination') == 'inProgress') {
       return this.jobCreationForm.controls['destination'].valid;
     }
-    else if(this.jobCreationStep['schedule'] == 'inProgress') {
+    else if(this.jobCreationStep.get("schedule") == 'inProgress') {
       return this.jobCreationForm.controls['schedule'].valid;
     }
     return false;
@@ -138,37 +145,37 @@ export class JobCreationComponent implements OnInit {
   }
 
   advanceForm() {
-    if(this.jobCreationStep["connections"] == "inProgress") {
-      this.jobCreationStep["connections"] = "complete";
-      this.jobCreationStep["source"] = "inProgress"
+    if(this.jobCreationStep.get("connections") == "inProgress") {
+      this.jobCreationStep.set("connections", "complete");
+      this.jobCreationStep.set("source", "inProgress");
       this.source.initializeSourceForm();
     }
-    else if(this.jobCreationStep["source"] == "inProgress") {
-      this.jobCreationStep["source"] = "complete";
-      this.jobCreationStep["destination"] = "inProgress"
+    else if(this.jobCreationStep.get("source") == "inProgress") {
+      this.jobCreationStep.set("source", "complete");
+      this.jobCreationStep.set("destination", "inProgress"); 
       this.destination.initializeDestinationForm();
     }
-    else if(this.jobCreationStep["destination"] == "inProgress") {
-      this.jobCreationStep["destination"] = "complete";
-      this.jobCreationStep["schedule"] = "inProgress"
+    else if(this.jobCreationStep.get("destination") == "inProgress") {
+      this.jobCreationStep.set("destination", "complete");
+      this.jobCreationStep.set("schedule", "inProgress");
     }
-    else if(this.jobCreationStep["schedule"] == "inProgress") {
+    else if(this.jobCreationStep.get("schedule") == "inProgress") {
       this.createJob();
     }
   }
 
   backForm() {
-    if(this.jobCreationStep["source"] == "inProgress") {
-      this.jobCreationStep["source"] = "incomplete";
-      this.jobCreationStep["connections"] = "inProgress"
+    if(this.jobCreationStep.get("source") == "inProgress") {
+      this.jobCreationStep.set("source", "incomplete");
+      this.jobCreationStep.set("connections", "inProgress");
     }
-    else if(this.jobCreationStep["destination"] == "inProgress") {
-      this.jobCreationStep["destination"] = "incomplete";
-      this.jobCreationStep["source"] = "inProgress"
+    else if(this.jobCreationStep.get("destination") == "inProgress") {
+      this.jobCreationStep.set("destination", "incomplete");
+      this.jobCreationStep.set("source", "inProgress");
     }
-    else if(this.jobCreationStep["schedule"] == "inProgress") {
-      this.jobCreationStep["schedule"] = "incomplete";
-      this.jobCreationStep["destination"] = "inProgress"
+    else if(this.jobCreationStep.get("schedule") == "inProgress") {
+      this.jobCreationStep.set("schedule", "incomplete");
+      this.jobCreationStep.set("destination", "inProgress");
     }
   }
 
