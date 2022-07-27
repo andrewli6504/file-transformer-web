@@ -9,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class JobSourceComponent implements OnInit {
 
   @Input() parentForm: FormGroup;
-  sourceType: String;
+  sourceType: string;
 
   constructor() { }
 

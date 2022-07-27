@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators';
   styleUrls: ['./project-page.component.scss']
 })
 export class ProjectPageComponent implements OnInit {
-  projectId: String;
+  projectId: string;
 
   constructor(
     private route: ActivatedRoute,

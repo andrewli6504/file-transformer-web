@@ -25,20 +25,40 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/file-transformer-web'),
+      dir: require('path').join(__dirname, 'coverage/apa-website-ui'),
+      // dir: require('path').join(__dirname, 'coverage'),
       subdir: '.',
       reporters: [
         { type: 'html' },
-        { type: 'text-summary' }
-      ]
+        { type: 'text-summary' },	
+        { type: 'lcovonly' }	
+      ],	
+      check: {	
+        global: {	
+          statements: 80,	
+          branches: 55,	
+          functions: 75,	
+          lines: 80	
+        }	
+      },
+      fixWebpackSourcePaths: true,
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-    restartOnFileChange: true
+    singleRun: true,
+    restartOnFileChange: true,	
+    browsers: ['ChromeHeadlessNoSandbox'],  	
+    customLaunchers: {  	
+      ChromeHeadlessNoSandbox: {  	
+        base: 'ChromeHeadless', 	
+        flags: ['--no-sandbox','--disable-setuid-sandbox']  	
+      } 	
+    },	
+    captureTimeout: 21000000, 	
+    browserDisconnectTolerance: 3,	
+    browserNoActivityTimeout : 21000000
   });
 };

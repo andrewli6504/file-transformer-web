@@ -59,6 +59,7 @@ export class JobCreationComponent implements OnInit {
   @ViewChild(JobScheduleComponent) schedule: JobScheduleComponent;
 
   jobCreationStep: Map<string, string>;
+  jobCreationStepKeys: any;
   jobCreationForm: FormGroup;
   progressDotsNum = Array(7);
 
@@ -79,7 +80,7 @@ export class JobCreationComponent implements OnInit {
     this.jobCreationStep.set("source", "incomplete");
     this.jobCreationStep.set("destination", "incomplete");
     this.jobCreationStep.set("schedule", "incomplete");
-    console.log(this.jobCreationStep);
+    this.jobCreationStepKeys = this.jobCreationStep.keys();
     this.initializeJobForm();
   }
 

@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ProjectPageComponent } from './project-page.component';
 
@@ -8,7 +10,9 @@ describe('ProjectPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProjectPageComponent ]
+      declarations: [ ProjectPageComponent ],
+      imports: [RouterTestingModule],
+      providers: []
     })
     .compileComponents();
 

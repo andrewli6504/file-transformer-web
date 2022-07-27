@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobProgressComponent implements OnInit {
 
-  steps: String[];
-  currentStep: String;
+  steps: string[];
+  currentStep: string;
   
 
   constructor() { }
