@@ -1,0 +1,42 @@
+.dotted-border {
+    border-style: dotted;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+.solid-border {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+.creation-button {
+    width: 85px;
+    height: 85px;
+}
+
+.creation-button:hover {
+    border-color: #329054;
+    cursor: pointer;
+}
+
+.creation-button:hover + .title {
+    color: #329054;
+}
+
+.title {
+    font-size: 16px;
+}
+
+.description {
+    font-size: 10px;
+}
+
+.header {
+    font-size: 32px;
+    color: #329054;
+}
+
+p {
+    color: #92929D;
+}
