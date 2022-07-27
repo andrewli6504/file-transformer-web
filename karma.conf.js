@@ -4,22 +4,48 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    frameworks: ['jasmine', '@angular-devkit/build-angular', 'karma-typescript'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma'),	
+      require('karma-sonarqube-unit-reporter'),	
+      require('karma-typescript'),
     ],
     client: {
       jasmine: {
+        random: false
         // you can add configuration options for Jasmine here
         // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
         // for example, you can disable the random execution with `random: false`
         // or set a specific seed with `seed: 4321`
       },
       clearContext: false // leave Jasmine Spec Runner output visible in browser
+    },
+    preprocessors: {		
+      "**/*.ts": ["karma-typescript"]		
+    },		
+    karmaTypescriptConfig: {		
+      exclude: [ 		
+        "node_modules"		
+      ],		
+      reports: {		
+        "lcovonly": {		
+          "directory": "coverage",		
+          "filename": "lcov.info",		
+          "subdirectory": "lcov"		
+        } 		
+      }		
+    },	
+    sonarQubeUnitReporter: {	
+      sonarQubeVersion: 'LATEST',	
+      outputFile: 'reports/ut_report.xml',	
+      overrideTestDescription: true,	
+      testPaths: ['./src'],	
+      testFilePattern: '.spec.ts',	
+      useBrowserName: false	
     },
     jasmineHtmlReporter: {
       suppressAll: true // removes the duplicated traces
@@ -43,7 +69,7 @@ module.exports = function (config) {
       },
       fixWebpackSourcePaths: true,
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'kjhtml', 'sonarqubeUnit', 'karma-typescript'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
