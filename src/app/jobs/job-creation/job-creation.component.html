@@ -1,21 +1,5 @@
-<!-- <div class="job-creation-container centered roundedCorners--small">
-    <div id="title">
-        <h1>Task Creation</h1>
-        <p>Lorem ipsum dolor sit amet</p>
-    </div>
-
-    <form class="job-creation-form" [formGroup]="jobCreationForm" (ngSubmit)="onSubmit($event.submitter.id)">
-        <app-job-connection class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['connections']"></app-job-connection>
-        <app-job-source class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['source']"></app-job-source>
-        <app-job-destination class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['destination']"></app-job-destination>
-        <app-job-schedule class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['schedule']"></app-job-schedule>
-    </form>
-</div>
-
-<app-job-progress></app-job-progress> -->
-
-<app-form-card class="d-flex flex-column w-100 h-100 p-3">
-    <form class="d-flex flex-column justify-content-between overflow-hidden w-100 h-100" (ngSubmit)="onSubmit($event.submitter.id)">
+<div class="d-flex flex-column w-100 h-100 p-3">
+    <form class="d-flex flex-column justify-content-between overflow-hidden w-100 h-100 position-relative" (ngSubmit)="onSubmit($event.submitter.id)">
         
         <div class="d-none d-lg-flex position-absolute top-0 end-0 mt-4 me-4">
             <div *ngFor="let key of jobCreationStepKeys, index as stepNum" class="d-flex align-items-center ms-2 me-3">
@@ -50,4 +34,4 @@
             </div>
         </div>
     </form>
-</app-form-card>
+</div>

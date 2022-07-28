@@ -21,29 +21,35 @@ app-root {
 //Overwrite angular material's timepicker colors
 .timepicker {
 
-    .timepicker__header {
-      background-color: #329054 !important;
-    }
-  
-    .clock-face__clock-hand {
-      background-color: #329054 !important;
-  
-      &::after {
-        background-color: #329054 !important;
-      }
-  
-      &::before {
-        border-color: #329054 !important;
-      }
-    }
-  
-    .clock-face__number {
-      > span.active {
-        background-color: #329054 !important;
-      }
-    }
-  
-    button:not(.timepicker-dial__item) {
-      color: #329054 !important;
-    }
-  }
+	.timepicker__header {
+		background-color: #329054 !important;
+	}
+
+	.clock-face__clock-hand {
+		background-color: #329054 !important;
+
+		&::after {
+			background-color: #329054 !important;
+		}
+
+		&::before {
+			border-color: #329054 !important;
+		}
+	}
+
+	.clock-face__number {
+		> span.active {
+			background-color: #329054 !important;
+		}
+	}
+
+	button:not(.timepicker-dial__item) {
+		color: #329054 !important;
+	}
+}
+
+
+//Fix for timepicker appearing behind dialog
+.timepicker-overlay, .timepicker-backdrop-overlay {
+  	z-index: 1000 !important;
+}

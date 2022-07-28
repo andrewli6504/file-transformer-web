@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import { JobCreationComponent } from 'src/app/jobs/job-creation/job-creation.component';
 
 @Component({
   selector: 'app-project-page',
@@ -13,13 +13,24 @@ export class ProjectPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private dialog: MatDialog,
   ) { 
     this.route.url.subscribe(url => {
       this.projectId = url[0].path;
     })
-    console.log(this.projectId);
   }
 
   ngOnInit(): void {
+  }
+
+  onClick() {
+    const jobRef = this.dialog.open(JobCreationComponent, {
+      width: "1320px",
+      height: "760px",
+      maxWidth: "90vw",
+      disableClose: false,
+    });
+
+    
   }
 }

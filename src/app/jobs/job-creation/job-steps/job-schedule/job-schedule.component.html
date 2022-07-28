@@ -1,6 +1,6 @@
 <div [formGroup]="parentForm" class="d-flex flex-column h-100">
     <h1 class="">Schedule</h1>
-    <form formGroupName="schedule" class="d-flex flex-column justify-content-center align-items-lg-center flex-grow-1">
+    <form formGroupName="schedule" class="d-flex flex-column justify-content-center align-items-lg-center flex-grow-1" *ngIf="active">
         <mat-form-field appearance="fill" class="my-3 input-large">
             <mat-label>Enter a date range</mat-label>
             <mat-date-range-input [rangePicker]="picker" formGroupName="datePicker">

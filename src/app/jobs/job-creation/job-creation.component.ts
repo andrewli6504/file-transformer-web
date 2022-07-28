@@ -7,6 +7,7 @@ import { JobSourceComponent } from './job-steps/job-source/job-source.component'
 import { JobDestinationComponent } from './job-steps/job-destination/job-destination.component';
 import { JobScheduleComponent } from './job-steps/job-schedule/job-schedule.component';
 import { TransformerApiService } from 'src/app/services/transformer-api/transformer-api.service';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-job-creation',
@@ -59,7 +60,7 @@ export class JobCreationComponent implements OnInit {
   @ViewChild(JobScheduleComponent) schedule: JobScheduleComponent;
 
   jobCreationStep: Map<string, string>;
-  jobCreationStepKeys: any;
+  jobCreationStepKeys: Array<string>;
   jobCreationForm: FormGroup;
   progressDotsNum = Array(7);
 
@@ -80,7 +81,7 @@ export class JobCreationComponent implements OnInit {
     this.jobCreationStep.set("source", "incomplete");
     this.jobCreationStep.set("destination", "incomplete");
     this.jobCreationStep.set("schedule", "incomplete");
-    this.jobCreationStepKeys = this.jobCreationStep.keys();
+    this.jobCreationStepKeys = ["connections", "source", "destination", "schedule"];
     this.initializeJobForm();
   }
 
@@ -111,11 +112,11 @@ export class JobCreationComponent implements OnInit {
       }),
       schedule: new FormGroup({
         datePicker: new FormGroup({
-          start: new FormControl("", [Validators.required]),
-          end: new FormControl("", [Validators.required])
+          start: new FormControl(),
+          end: new FormControl()
         }),
-        frequency: new FormControl("", [Validators.required]),
-        time: new FormControl("", [Validators.required])
+        frequency: new FormControl(),
+        time: new FormControl()
       })
     })
   }
@@ -159,6 +160,7 @@ export class JobCreationComponent implements OnInit {
     else if(this.jobCreationStep.get("destination") == "inProgress") {
       this.jobCreationStep.set("destination", "complete");
       this.jobCreationStep.set("schedule", "inProgress");
+      this.schedule.initializeScheduleForm();
     }
     else if(this.jobCreationStep.get("schedule") == "inProgress") {
       this.createJob();

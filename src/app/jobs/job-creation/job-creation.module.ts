@@ -19,6 +19,7 @@ import { JobScheduleComponent } from './job-steps/job-schedule/job-schedule.comp
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { ComponentModule } from 'src/app/common/component.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -45,6 +46,10 @@ import { ComponentModule } from 'src/app/common/component.module';
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
     ComponentModule,
+    MatDialogModule,
+  ],
+  exports: [
+    JobCreationComponent
   ]
 })
 export class JobCreationModule { }
