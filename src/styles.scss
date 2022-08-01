@@ -6,6 +6,7 @@ $primary: #329054;
 
 app-footer {
     margin-top: auto;
+	z-index: 1100;
 }
 
 router-outlet + * {
@@ -52,4 +53,13 @@ app-root {
 //Fix for timepicker appearing behind dialog
 .timepicker-overlay, .timepicker-backdrop-overlay {
   	z-index: 1000 !important;
+}
+
+.sidenav-item > .popover {
+    background-color: #36AC60;
+	margin-left: 18px !important;
+}
+
+.sidenav-item > .popover > .popover-arrow {
+	display: none;
 }

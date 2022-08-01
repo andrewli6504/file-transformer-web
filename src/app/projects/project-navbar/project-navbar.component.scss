@@ -1,0 +1,37 @@
+@media(min-width: 992px) {
+
+}
+
+.offcanvas {
+    padding-left: 100px;
+    padding-top: 100px;
+    background-color: #3A955B;
+    color: white;
+    z-index: 100 !important;
+}
+
+.project-navbar {
+    background-color: #329054;
+    height: 100%;
+    width: 75px;
+    padding-top: 50px;
+    z-index: 110 !important;
+}
+
+.sidenav-item {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 18px;
+}
+
+.sidenav-item:hover {
+    background-color: #FFFFFF69;
+}
+
+.popover {
+    margin-left: 30px;
+}
+
+.popover-body {
+    background-color: #36AC60;
+}
