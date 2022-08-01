@@ -1,10 +1,42 @@
 @media(min-width: 992px) {
+    .project-navbar {
+        height: 100%;
+        width: 75px;
+        padding-top: 50px;
+    }
 
+    //CSS for offcanvas-start
+    .offcanvas {
+        padding-left: 100px;
+        padding-top: 100px;
+        top: 0;
+        left: 0;
+        width: var(--bs-offcanvas-width);
+        border-right: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
+        transform: translateX(-100%);
+    }
+}
+
+@media(max-width: 991px) {
+    .project-navbar {
+        height: 75px;
+        width: 100%;
+        bottom: 0;
+    }
+
+    //CSS for offcanvas-bottom
+    .offcanvas {
+        margin-bottom: 100px;
+        right: 0;
+        left: 0;
+        height: var(--bs-offcanvas-height);
+        max-height: 100%;
+        border-top: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
+        transform: translateY(100%);
+    }
 }
 
 .offcanvas {
-    padding-left: 100px;
-    padding-top: 100px;
     background-color: #3A955B;
     color: white;
     z-index: 100 !important;
@@ -12,16 +44,13 @@
 
 .project-navbar {
     background-color: #329054;
-    height: 100%;
-    width: 75px;
-    padding-top: 50px;
     z-index: 110 !important;
 }
 
 .sidenav-item {
     width: 45px;
     height: 45px;
-    margin-bottom: 18px;
+    margin-top: 16px;
 }
 
 .sidenav-item:hover {
