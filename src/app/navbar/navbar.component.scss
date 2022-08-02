@@ -24,3 +24,9 @@ li > a {
 .navbar {
     z-index: 1100;
 }
+
+//Padding under navbar b/c its positioned absolute
+.nav-filler {
+    height: 91px;
+    width: 100%;
+}

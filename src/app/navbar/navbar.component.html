@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white py-4 shadow">
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-4 shadow position-absolute container-fluid">
     <div class="container-fluid">
         <a class="navbar-brand ms-3" href="#">File Transformer</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +37,7 @@
         </div>
     </div>
 </nav>
+<div class="nav-filler"></div>
 <div class="w-100 position-relative">
     <app-projects-card *ngIf="showCard['projects']" class="position-absolute">PROJECTS</app-projects-card>
     <app-settings-card *ngIf="showCard['settings']" class="position-absolute">SETTINGS</app-settings-card>
