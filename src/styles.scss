@@ -64,3 +64,8 @@ app-root {
 .sidenav-item > .popover > .popover-arrow {
 	display: none;
 }
+
+//For Job Creation Popup
+.mat-dialog-container {
+    overflow-x: hidden !important;
+}

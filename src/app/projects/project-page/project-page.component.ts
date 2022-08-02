@@ -26,11 +26,13 @@ export class ProjectPageComponent implements OnInit {
   onClick() {
     const jobRef = this.dialog.open(JobCreationComponent, {
       width: "1320px",
-      height: "760px",
+      height: "720px",
       maxWidth: "90vw",
+      maxHeight: "80vh",
       disableClose: false,
+      position: {
+        top: "90px"
+      }
     });
-
-    
   }
 }

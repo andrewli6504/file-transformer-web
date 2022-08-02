@@ -16,7 +16,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   animations: [
     trigger('slideJobSteps', [
       state("incomplete", style({
-        transform: "translateX(220%)",
+        transform: "translateX(250%)",
         // backgroundColor: "blue"
       })),
       state("inProgress", style({
@@ -24,7 +24,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
         // backgroundColor: "white"
       })),
       state("complete", style({
-        transform: "translateX(-220%)",
+        transform: "translateX(-250%)",
         // backgroundColor: "red"
       })),
       transition("incomplete <=> inProgress", [

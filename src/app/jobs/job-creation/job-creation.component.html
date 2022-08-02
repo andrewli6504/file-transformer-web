@@ -1,5 +1,5 @@
-<div class="d-flex flex-column w-100 h-100 p-3">
-    <form class="d-flex flex-column justify-content-between overflow-hidden w-100 h-100 position-relative" (ngSubmit)="onSubmit($event.submitter.id)">
+<div class="d-flex flex-column w-100 h-100 p-3 overflow-y-auto overflow-x-hidden">
+    <form class="d-flex flex-column justify-content-between w-100 h-100 position-relative" (ngSubmit)="onSubmit($event.submitter.id)">
         
         <div class="d-none d-lg-flex position-absolute top-0 end-0 mt-4 me-4">
             <div *ngFor="let key of jobCreationStepKeys, index as stepNum" class="d-flex align-items-center ms-2 me-3">
@@ -19,7 +19,7 @@
         </div>
         
         
-        <div class="mt-4 d-flex flex-column">
+        <div class="my-4 d-flex flex-column">
             <div class="d-flex job-progress align-self-center mb-3 d-lg-none">
                 <div *ngFor="let key of jobCreationStepKeys" class="progress-step" [@progressSteps]="jobCreationStep.get(key)"></div>
             </div>
