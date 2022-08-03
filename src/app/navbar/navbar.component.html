@@ -10,13 +10,16 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link user-select-none" id="projects" (click)="toggleDropdown($event.target)">Projects</a>
+                    <a class="nav-link user-select-none d-none d-lg-block" id="projects" (click)="toggleDropdown($event.target)">Projects</a>
+                    <a class="nav-link user-select-none d-block d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasProjects">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link user-select-none" id="settings" (click)="toggleDropdown($event.target)">Settings</a>
+                    <a class="nav-link user-select-none d-none d-lg-block" id="settings" (click)="toggleDropdown($event.target)">Settings</a>
+                    <a class="nav-link user-select-none d-block d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings">Settings</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link user-select-none" id="help" (click)="toggleDropdown($event.target)">Help</a>
+                    <a class="nav-link user-select-none d-none d-lg-block" id="help" (click)="toggleDropdown($event.target)">Help</a>
+                    <a class="nav-link user-select-none d-block d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHelp">Help</a>
                 </li>
                 <li *ngIf="!loggedIn" class="nav-item">
                     <a class="nav-link" href="signup">Register</a>
@@ -39,7 +42,28 @@
 </nav>
 <div class="nav-filler"></div>
 <div class="w-100 position-relative">
-    <app-projects-card *ngIf="showCard['projects']" class="position-absolute">PROJECTS</app-projects-card>
-    <app-settings-card *ngIf="showCard['settings']" class="position-absolute">SETTINGS</app-settings-card>
-    <app-help-card *ngIf="showCard['help']" class="position-absolute">HELP</app-help-card>
+    <app-projects-card *ngIf="showCard['projects']" class="position-absolute w-100 d-none d-lg-block">PROJECTS</app-projects-card>
+    <app-settings-card *ngIf="showCard['settings']" class="position-absolute w-100 d-none d-lg-block">SETTINGS</app-settings-card>
+    <app-help-card *ngIf="showCard['help']" class="position-absolute d-none w-100 d-lg-block">HELP</app-help-card>
+</div>
+
+<div class="offcanvas offcanvas-top h-auto" tabindex="-1" id="offcanvasProjects">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="offcanvas-body">
+        <app-projects-card></app-projects-card>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-top h-auto" tabindex="-1" id="offcanvasSettings">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="offcanvas-body">
+        <app-settings-card></app-settings-card>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-top h-auto" tabindex="-1" id="offcanvasHelp">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="offcanvas-body">
+        <app-help-card></app-help-card>
+    </div>
 </div>
