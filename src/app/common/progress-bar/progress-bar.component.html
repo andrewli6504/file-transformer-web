@@ -1,0 +1,3 @@
+<div class="d-flex align-self-center mb-3 d-lg-none m-auto" [style.width.px]="totalWidth">
+    <div *ngFor="let key of progressKeys" class="progress-step" [@progressSteps]="progressSteps.get(key)"></div>
+</div>

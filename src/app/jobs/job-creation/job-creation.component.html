@@ -20,9 +20,10 @@
         
         
         <div class="my-4 d-flex flex-column">
-            <div class="d-flex job-progress align-self-center mb-3 d-lg-none">
+            <!-- <div class="d-flex job-progress align-self-center mb-3 d-lg-none">
                 <div *ngFor="let key of jobCreationStepKeys" class="progress-step" [@progressSteps]="jobCreationStep.get(key)"></div>
-            </div>
+            </div> -->
+            <app-progress-bar [progressSteps]="jobCreationStep" [progressKeys]="jobCreationStepKeys"></app-progress-bar>
             <div class="d-flex justify-content-end w-100 align-self-center button-group">
                 <button mat-raised-button class="me-3" color="primary" type="submit" id="back-button" *ngIf="this.jobCreationStep.get('connections')!='inProgress'">
                     <span>Back</span>
