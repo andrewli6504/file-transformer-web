@@ -17,13 +17,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { OnboardingCardComponent } from './onboarding-card/onboarding-card.component';
 
 
 @NgModule({
   declarations: [
     ProjectCreationComponent,
     ProjectPageComponent,
-    ProjectNavbarComponent
+    ProjectNavbarComponent,
+    OnboardingCardComponent
   ],
   imports: [
     CommonModule,
