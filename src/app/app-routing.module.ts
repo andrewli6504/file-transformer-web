@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'reset-password', loadChildren: () => import('./auth-pages/reset-password/reset-password.module').then(m => m.ResetPasswordModule) },
   { path: 'job-creation', loadChildren: () => import('./jobs/job-creation/job-creation.module').then(m => m.JobCreationModule) },
   { path: 'connection-creation', loadChildren: () => import('./connections/connection-creation/connection-creation.module').then(m => m.ConnectionCreationModule) },
+  { path: 'projects', loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule) },
   { path: '**', redirectTo: '' }
 ];
 @NgModule({

@@ -1,0 +1,78 @@
+<testExecutions version="1">
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="165"/>
+  </file>
+  <file path="src/app/auth-pages/login/login.component.spec.ts">
+    <testCase name="LoginComponent should create" duration="76"/>
+    <testCase name="LoginComponent should trigger [loginUser]" duration="39"/>
+  </file>
+  <file path="src/app/auth-pages/reset-password/reset-password.component.spec.ts">
+    <testCase name="ResetPasswordComponent should create" duration="34"/>
+  </file>
+  <file path="src/app/auth-pages/signup/signup.component.spec.ts">
+    <testCase name="SignupComponent should create" duration="36"/>
+  </file>
+  <file path="src/app/common/footer/footer.component.spec.ts">
+    <testCase name="FooterComponent should create" duration="12"/>
+  </file>
+  <file path="src/app/common/form-card/form-card.component.spec.ts">
+    <testCase name="FormCardComponent should create" duration="9"/>
+  </file>
+  <file path="src/app/connections/connection-creation/connection-creation.component.spec.ts">
+    <testCase name="ConnectionCreationComponent should create" duration="9"/>
+  </file>
+  <file path="src/app/jobs/job-creation/job-creation.component.spec.ts">
+    <testCase name="JobCreationComponent should create" duration="111"/>
+  </file>
+  <file path="src/app/jobs/job-creation/job-progress/job-progress.component.spec.ts">
+    <testCase name="JobProgressComponent should create" duration="17"/>
+  </file>
+  <file path="src/app/jobs/job-creation/job-steps/job-connection/job-connection.component.spec.ts">
+    <testCase name="JobConnectionComponent should create" duration="24"/>
+  </file>
+  <file path="src/app/jobs/job-creation/job-steps/job-destination/job-destination.component.spec.ts">
+    <testCase name="JobDestinationComponent should create" duration="39"/>
+  </file>
+  <file path="src/app/jobs/job-creation/job-steps/job-schedule/job-schedule.component.spec.ts">
+    <testCase name="JobScheduleComponent should create" duration="48"/>
+  </file>
+  <file path="src/app/jobs/job-creation/job-steps/job-source/job-source.component.spec.ts">
+    <testCase name="JobSourceComponent should create" duration="19"/>
+  </file>
+  <file path="src/app/landing-page/landing-page/landing-page.component.spec.ts">
+    <testCase name="LandingPageComponent should create" duration="37"/>
+  </file>
+  <file path="src/app/navbar/cards/help-card/help-card.component.spec.ts">
+    <testCase name="HelpCardComponent should create" duration="22"/>
+  </file>
+  <file path="src/app/navbar/cards/projects-card/projects-card.component.spec.ts">
+    <testCase name="ProjectsCardComponent should create" duration="11"/>
+  </file>
+  <file path="src/app/navbar/cards/settings-card/settings-card.component.spec.ts">
+    <testCase name="SettingsCardComponent should create" duration="13"/>
+  </file>
+  <file path="src/app/navbar/navbar.component.spec.ts">
+    <testCase name="NavbarComponent should create" duration="26"/>
+  </file>
+  <file path="src/app/projects/project-creation/project-creation.component.spec.ts">
+    <testCase name="ProjectCreationComponent should create" duration="16"/>
+  </file>
+  <file path="src/app/projects/project-navbar/project-navbar.component.spec.ts">
+    <testCase name="ProjectNavbarComponent should create" duration="10"/>
+  </file>
+  <file path="src/app/projects/project-page/project-page.component.spec.ts">
+    <testCase name="ProjectPageComponent should create" duration="6"/>
+  </file>
+  <file path="src/app/services/application-state/application-state.service.spec.ts">
+    <testCase name="ApplicationStateService should be created" duration="6"/>
+  </file>
+  <file path="src/app/services/auth-api/auth-api.service.spec.ts">
+    <testCase name="AuthApiService should be created" duration="3"/>
+  </file>
+  <file path="src/app/services/rest-api-base/rest-api-base.service.spec.ts">
+    <testCase name="RestApiBaseService should be created" duration="4"/>
+  </file>
+  <file path="src/app/services/transformer-api/transformer-api.service.spec.ts">
+    <testCase name="TransformerApiService should be created" duration="7"/>
+  </file>
+</testExecutions>

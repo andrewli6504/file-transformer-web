@@ -41,6 +41,7 @@ $primary: #329054;
 
 app-footer {
     margin-top: auto;
+	z-index: 1100;
 }
 
 router-outlet + * {
@@ -56,31 +57,50 @@ app-root {
 //Overwrite angular material's timepicker colors
 .timepicker {
 
-    .timepicker__header {
-      background-color: #329054 !important;
-    }
-  
-    .clock-face__clock-hand {
-      background-color: #329054 !important;
-  
-      &::after {
-        background-color: #329054 !important;
-      }
-  
-      &::before {
-        border-color: #329054 !important;
-      }
-    }
-  
-    .clock-face__number {
-      > span.active {
-        background-color: #329054 !important;
-      }
-    }
-  
-    button:not(.timepicker-dial__item) {
-      color: #329054 !important;
-    }
-  }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+	.timepicker__header {
+		background-color: #329054 !important;
+	}
+
+	.clock-face__clock-hand {
+		background-color: #329054 !important;
+
+		&::after {
+			background-color: #329054 !important;
+		}
+
+		&::before {
+			border-color: #329054 !important;
+		}
+	}
+
+	.clock-face__number {
+		> span.active {
+			background-color: #329054 !important;
+		}
+	}
+
+	button:not(.timepicker-dial__item) {
+		color: #329054 !important;
+	}
+}
+
+
+//Fix for timepicker appearing behind dialog
+.timepicker-overlay, .timepicker-backdrop-overlay {
+  	z-index: 1000 !important;
+}
+
+//Popover css color and positioning for projects sidenav
+.sidenav-item > .popover {
+    background-color: #36AC60;
+	margin-left: 18px !important;
+}
+
+.sidenav-item > .popover > .popover-arrow {
+	display: none;
+}
+
+//For Job Creation Popup
+.mat-dialog-container {
+    overflow-x: hidden !important;
+}

@@ -1,0 +1,16 @@
+@media(min-width: 992px) {
+    app-project-navbar + div {
+        margin-left: 75px;
+    }
+
+    app-project-navbar {
+        height: 100%;
+    }
+}
+
+@media(max-width: 991px) {
+    app-project-navbar {
+        width: 100%;
+        bottom: 0;
+    }
+}

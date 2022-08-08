@@ -1,26 +1,10 @@
-<!-- <div class="job-creation-container centered roundedCorners--small">
-    <div id="title">
-        <h1>Task Creation</h1>
-        <p>Lorem ipsum dolor sit amet</p>
-    </div>
-
-    <form class="job-creation-form" [formGroup]="jobCreationForm" (ngSubmit)="onSubmit($event.submitter.id)">
-        <app-job-connection class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['connections']"></app-job-connection>
-        <app-job-source class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['source']"></app-job-source>
-        <app-job-destination class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['destination']"></app-job-destination>
-        <app-job-schedule class="job-step" [parentForm]="jobCreationForm" [@slideJobSteps]="jobCreationStep['schedule']"></app-job-schedule>
-    </form>
-</div>
-
-<app-job-progress></app-job-progress> -->
-
-<app-form-card class="d-flex flex-column w-100 h-100 p-3">
-    <form class="d-flex flex-column justify-content-between overflow-hidden w-100 h-100" (ngSubmit)="onSubmit($event.submitter.id)">
+<div class="d-flex flex-column w-100 h-100 p-3 overflow-y-auto overflow-x-hidden">
+    <form class="d-flex flex-column justify-content-between w-100 h-100 position-relative" (ngSubmit)="onSubmit($event.submitter.id)">
         
         <div class="d-none d-lg-flex position-absolute top-0 end-0 mt-4 me-4">
-            <div *ngFor="let key of jobCreationStep.keys(), index as stepNum" class="d-flex align-items-center ms-2 me-3">
+            <div *ngFor="let key of jobCreationStepKeys, index as stepNum" class="d-flex align-items-center ms-2 me-3">
                 <div *ngIf="jobCreationStep.get(key)==='inProgress'" class="progress-count me-1">{{stepNum + 1}}</div>
-                <b class="me-4" style="text-transform: capitalize">{{key}}</b>
+                <strong class="me-4" style="text-transform: capitalize">{{key}}</strong>
                 <div *ngIf="stepNum < jobCreationStep.size - 1" class="d-flex align-items-center">
                     <div *ngFor="let i of progressDotsNum" class="progress-dots"></div>
                 </div>
@@ -35,9 +19,9 @@
         </div>
         
         
-        <div class="mt-4 d-flex flex-column">
+        <div class="my-4 d-flex flex-column">
             <div class="d-flex job-progress align-self-center mb-3 d-lg-none">
-                <div *ngFor="let key of jobCreationStep.keys()" class="progress-step" [@progressSteps]="jobCreationStep.get(key)"></div>
+                <div *ngFor="let key of jobCreationStepKeys" class="progress-step" [@progressSteps]="jobCreationStep.get(key)"></div>
             </div>
             <div class="d-flex justify-content-end w-100 align-self-center button-group">
                 <button mat-raised-button class="me-3" color="primary" type="submit" id="back-button" *ngIf="this.jobCreationStep.get('connections')!='inProgress'">
@@ -50,4 +34,4 @@
             </div>
         </div>
     </form>
-</app-form-card>
+</div>
