@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       username: username.trim(),
       password: password.trim()
     }
-
+    console.log("LOGIN");
     this.authApiService.login(cred).subscribe(resp => {
       console.log(resp);
       if(resp["error"]) {

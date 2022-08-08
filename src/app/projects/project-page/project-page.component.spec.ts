@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -11,7 +12,7 @@ describe('ProjectPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ProjectPageComponent ],
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, MatDialogModule],
       providers: []
     })
     .compileComponents();
