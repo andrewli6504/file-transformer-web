@@ -1,5 +1,6 @@
 <testExecutions version="1">
-  <file path="src/app/auth-pages/login/login.component.spec.ts">
-    <testCase name="LoginComponent should trigger [loginUser]" duration="133"/>
+  <file path="src/app/services/rest-api-base/rest-api-base.service.spec.ts">
+    <testCase name="RestApiBaseService should be created" duration="40"/>
+    <testCase name="RestApiBaseService should get headers" duration="10"/>
   </file>
 </testExecutions>
